@@ -1,44 +1,37 @@
 import React from "react";
 import './Navbar.css';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <aside className="navbar">
-      <a href="#Home" className="logo">
-        <div>Fábio</div>
-        <div>Rocha</div>
-      </a>
-
-      <nav className="nav">
-        <ul className="navbar-list">
+    <nav>
+        <div className="title">
+          <a href="">Fábio <span>Rocha</span></a>
+        </div>
+        <ul className="nav-links">
           <li>
-            <a href="#home">
-              <i className="icon-home"></i>
-            </a>
+            <Link to="/">Home page</Link>
           </li>
           <li>
-            <a href="#about">
-              <i className="icon-user"></i>
-            </a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#portfolio">
-              <i className="icon-briefcase"></i>
-            </a>
+            <Link to="/portfolio">Portfolio</Link>
           </li>
           <li>
-            <a href="#contact">
-              <i className="icon-bubble"></i>
-            </a>
+            <Link to="/quiz">Quiz</Link>
           </li>
-          <li>
-            <a href="#quiz">
-              <i className="icon-bulb"></i>
-            </a>
+          <li className="nav-socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </li>
+          <li className="nav-socials">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li className="contact">
+            <Link to="/contact">Get in touch</Link>
           </li>
         </ul>
-      </nav>
-    </aside>
+    </nav>
   );
 }
 

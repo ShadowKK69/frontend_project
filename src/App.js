@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Portfolio from './components/Portfolio/Portfolio';
-import Contact from './components/Contact/Contact';
-import Quiz from './components/Quiz/Quiz';
-
+import About from './components/About/About'
+import Portfolio from './components/Portfolio/Portfolio'
+import Contact from './components/Contact/Contact'
+import Quiz from './components/Quiz/Quiz'
 
 function App() {
   return (
     <>
       <Navbar />
-      <main>
-        <Home />
-        <About />
-        <Portfolio />
-        <Contact />
-        <Quiz />
-      </main>
+      <div className='container'>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/quiz" element={<Quiz />} />
+        </Routes>
+      </div>
     </>
   );
 }
