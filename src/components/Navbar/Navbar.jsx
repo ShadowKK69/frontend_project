@@ -1,34 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import './Navbar.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
     <nav>
         <div className="title">
-          <a href="">Fábio <span>Rocha</span></a>
+          <Link to="/"><a href="" onClick={closeMenu}>Fábio <span>Rocha</span></a></Link>
         </div>
-        <ul className="nav-links">
+        <div className="menu" onClick={() => {
+          setMenuOpen(!menuOpen);
+        }}>
+          <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
+        <ul className={`${menuOpen ? "open" : ""} nav-links`}>
           <li>
-            <Link to="/">Home page</Link>
+            <NavLink to="/" onClick={closeMenu}>Home page</NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about" onClick={closeMenu}>About</NavLink>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <NavLink to="/portfolio" onClick={closeMenu}>Portfolio</NavLink>
           </li>
           <li>
-            <Link to="/quiz">Quiz</Link>
+            <NavLink to="/quiz" onClick={closeMenu}>Quiz</NavLink>
           </li>
           <li className="nav-socials">
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onClick={closeMenu}><i class="fa-brands fa-linkedin-in"></i></a>
           </li>
           <li className="nav-socials">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" onClick={closeMenu}><i class="fa-brands fa-twitter"></i></a>
           </li>
           <li className="contact">
-            <Link to="/contact">Get in touch</Link>
+            <NavLink to="/contact" onClick={closeMenu}>Get in touch</NavLink>
           </li>
         </ul>
     </nav>
