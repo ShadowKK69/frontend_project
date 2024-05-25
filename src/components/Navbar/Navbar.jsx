@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import './Navbar.css';
+import '../../styles.css';
 import { Link, NavLink } from "react-router-dom";
+import ToggleDarkMode from '../ToggleDarkMode/ToggleDarkMode'
 
-const Navbar = () => {
+const Navbar = ({setIsDark, isDark}) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -10,10 +12,11 @@ const Navbar = () => {
     setMenuOpen(false);
   }
 
+
   return (
     <nav>
         <div className="title">
-          <Link to="/"><a href="" onClick={closeMenu}>Fábio <span>Rocha</span></a></Link>
+          <Link to="/" onClick={closeMenu}>Fábio <span>Rocha</span></Link>
         </div>
         <div className="menu" onClick={() => {
           setMenuOpen(!menuOpen);
@@ -25,7 +28,7 @@ const Navbar = () => {
             <NavLink to="/" onClick={closeMenu}>Home page</NavLink>
           </li>
           <li>
-            <NavLink to="/about" onClick={closeMenu}>About</NavLink>
+            <NavLink to="/about" onClick={closeMenu}>About me</NavLink>
           </li>
           <li>
             <NavLink to="/portfolio" onClick={closeMenu}>Portfolio</NavLink>
@@ -33,13 +36,18 @@ const Navbar = () => {
           <li>
             <NavLink to="/quiz" onClick={closeMenu}>Quiz</NavLink>
           </li>
-          <li className="nav-socials">
-            <a href="#" onClick={closeMenu}><i class="fa-brands fa-linkedin-in"></i></a>
-          </li>
-          <li className="nav-socials">
-            <a href="#" onClick={closeMenu}><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li className="contact">
+          <div className="nav-socials">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel='noopener' onClick={closeMenu}><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" rel='noopener' onClick={closeMenu}><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <div><ToggleDarkMode isChecked={isDark} handleChange={() => setIsDark(!isDark)}/></div>
+            </li>
+          </div>
+          <li className="btn contact">
             <NavLink to="/contact" onClick={closeMenu}>Get in touch</NavLink>
           </li>
         </ul>

@@ -1,0 +1,18 @@
+:root {
+  --background-color: rgba(255, 255, 255, 0.8);
+  --primary-text-color: #222;
+  --secondary-text-color: #959CAD;
+  --hover-color: #5B5E76;
+  --primary-font: 'DM Sans', sans-serif;
+  --secondary-font: 'Manrope', sans-serif;
+  --optional-font: 'Outfit', sans-serif;
+  --rgb-line: linear-gradient(to right, #d3b0b0, #ffccff);
+}
+
+[data-theme="dark"] {
+  --background-color: rgba(7, 7, 7, 0.9);
+  --primary-text-color: rgb(255, 255, 255);
+  --secondary-text-color: #bbc0cc;
+  --hover-color: #c5c3c5;
+  --rgb-line: linear-gradient(to right, #61a2ec, #5882dd);
+}
