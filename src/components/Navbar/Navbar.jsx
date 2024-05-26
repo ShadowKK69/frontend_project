@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './Navbar.css';
-import '../../styles.css';
 import { Link, NavLink } from "react-router-dom";
 import ToggleDarkMode from '../ToggleDarkMode/ToggleDarkMode'
 
@@ -29,9 +28,6 @@ const Navbar = ({setIsDark, isDark}) => {
           </li>
           <li>
             <NavLink to="/about" onClick={closeMenu}>About me</NavLink>
-          </li>
-          <li>
-            <NavLink to="/portfolio" onClick={closeMenu}>Portfolio</NavLink>
           </li>
           <li>
             <NavLink to="/quiz" onClick={closeMenu}>Quiz</NavLink>

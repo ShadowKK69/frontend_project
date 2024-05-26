@@ -74,7 +74,7 @@ nav .nav-links .nav-socials a {
 }
 
 nav .nav-links .contact a {
-  color: #fff;
+  color: var(--button-text-color)
 }
 
 nav .nav-links .contact a:hover {
