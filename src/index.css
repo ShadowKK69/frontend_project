@@ -1,6 +1,7 @@
 :root {
   --background-color: rgba(255, 255, 255, 0.8);
   --optional-bg-color: #EFEFF0;
+  --footer-bg: #000;
 
   --primary-text-color: #222;
   --secondary-text-color: #959CAD;
@@ -21,6 +22,7 @@
 [data-theme="dark"] {
   --background-color: rgba(7, 7, 7, 0.9);
   --optional-bg-color: #2e2e2e;
+  --footer-bg: #111111;
 
   --primary-text-color: rgb(255, 255, 255);
   --secondary-text-color: #bbc0cc;

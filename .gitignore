@@ -5,6 +5,11 @@
 /public/*.ico
 /public/images
 
+/src/assets/*.png
+/src/assets/*.ico
+/src/assets/*.jpg
+/src/assets/*.svg
+
 # dependencies
 /node_modules
 /.pnp

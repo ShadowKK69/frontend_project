@@ -1,0 +1,42 @@
+.contact-container {
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 430px;
+}
+
+.contact-socials a {
+  color: var(--primary-text-color);
+  margin-right: 20px;
+}
+
+.contact-socials a:hover {
+  color: var(--secondary-text-color);
+}
+
+.contact-container h2 {
+  font-size: 3rem;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.contact-container p {
+  font-size: 1.625rem;
+  line-height: 36px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.contact-container .contact-email {
+  margin-bottom: 40px;
+}
+
+.contact-container .contact-email a,
+.contact-container .contact-email i {
+  color: #9260E1;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 7px;
+}
