@@ -29,20 +29,22 @@ const About = () => {
         </div>
       </div>
 
-      <section className="skill-info">
-        <h3>What can I do for you</h3>
-        <div className="work-info">
-          <div className="info">
-            <div className="info-title">For businesses</div>
-            <div className="info-description">I design interfaces that are friendly and valuable for customers and easy to implement for engineers.</div>
-          </div>
-          <div className="info">
-            <div className="info-title">For startups</div>
-            <div className="info-description">I help to identify the problem and design an MVP. I will advise on tools for building if you don't have an engineer or development resources.</div>
-          </div>
-          <div className="info">
-            <div className="info-title">For product teams</div>
-            <div className="info-description">I design growth experiments and help your team look at the challenges differently to build a better product.</div>
+      <section className="skill-info full-width">
+        <div className="skill-info-wrapper">
+          <h3>What can I do for you</h3>
+          <div className="work-info">
+            <div className="info">
+              <div className="info-title">For businesses</div>
+              <div className="info-description">I design interfaces that are friendly and valuable for customers and easy to implement for engineers.</div>
+            </div>
+            <div className="info">
+              <div className="info-title">For startups</div>
+              <div className="info-description">I help to identify the problem and design an MVP. I will advise on tools for building if you don't have an engineer or development resources.</div>
+            </div>
+            <div className="info">
+              <div className="info-title">For product teams</div>
+              <div className="info-description">I design growth experiments and help your team look at the challenges differently to build a better product.</div>
+            </div>
           </div>
         </div>
       </section>

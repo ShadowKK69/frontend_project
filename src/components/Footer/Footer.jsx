@@ -2,7 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='full-width'>
     <h3 className="footer-heading">Let's talk about your project:</h3>
     <a href="mailto:fabiodaniel152015@hotmail.com" className="footer-email">Click here to contact me</a>
     <div className="footer-socials">

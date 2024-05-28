@@ -7,6 +7,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Quiz from './components/Quiz/Quiz'
 import { useState } from 'react';
+import Footer from './components/Footer/Footer';
 
 function App() {
 

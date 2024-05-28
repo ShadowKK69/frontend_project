@@ -66,38 +66,44 @@
   color: var(--secondary-text-color);
 }
 
+
+
 .skill-info {
   margin-top: 80px;
   background-color: var(--optional-bg-color);
-  border-radius: 10px;
   margin-bottom: 80px;
 }
 
-.skill-info h3 {
+.skill-info .skill-info-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.skill-info .skill-info-wrapper h3 {
   font-size: 3rem;
   font-weight: bold;
   color: var(--secondary-text-color);
   padding: 40px 0 30px 20px;
 }
 
-.skill-info .work-info {
+.skill-info .skill-info-wrapper .work-info {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.skill-info .work-info .info {
+.skill-info .skill-info-wrapper .work-info .info {
   padding: 30px 10px;
 }
 
-.skill-info .work-info .info .info-title {
+.skill-info .skill-info-wrapper .work-info .info .info-title {
   padding: 10px 20px;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 1.875rem;
 }
 
-.skill-info .work-info .info .info-description {
+.skill-info .skill-info-wrapper .work-info .info .info-description {
   padding: 0 20px;
   color: var(--secondary-text-color);
   font-weight: 600;
