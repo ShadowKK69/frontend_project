@@ -20,7 +20,7 @@ const Navbar = ({setIsDark, isDark}) => {
         <div className="menu" onClick={() => {
           setMenuOpen(!menuOpen);
         }}>
-          <i class="fa-solid fa-bars fa-2x"></i>
+          <i className="fa-solid fa-bars fa-2x"></i>
         </div>
         <ul className={`${menuOpen ? "open" : ""} nav-links`}>
           <li>
@@ -34,10 +34,10 @@ const Navbar = ({setIsDark, isDark}) => {
           </li>
           <div className="nav-socials">
             <li>
-              <a href="https://linkedin.com" target="_blank" rel='noopener' onClick={closeMenu}><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel='noopener' onClick={closeMenu}><i className="fa-brands fa-linkedin-in"></i></a>
             </li>
             <li>
-              <a href="https://twitter.com" target="_blank" rel='noopener' onClick={closeMenu}><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://twitter.com" target="_blank" rel='noopener' onClick={closeMenu}><i className="fa-brands fa-twitter"></i></a>
             </li>
             <li>
               <div><ToggleDarkMode isChecked={isDark} handleChange={() => setIsDark(!isDark)}/></div>

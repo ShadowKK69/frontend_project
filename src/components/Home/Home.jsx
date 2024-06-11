@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './Home.css';
 import '../../styles.css';
-import Fabio from '../../assets/fabio.jpg'
+import Fabio from '../../assets/Fabio.jpeg'
 import Footer from "../Footer/Footer";
 
 const Home = () => {

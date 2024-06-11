@@ -1,28 +1,28 @@
 import React from "react";
 import './About.css';
-import FabioPic from '../../assets/fabio2.jpg'
+import FabioPic from '../../assets/Fabio2.jpg'
 import Footer from "../Footer/Footer";
 
 const About = () => {
   return (
     <>
       
-      <div class="about-container">
-        <div class="profile-pic">
+      <div className="about-container">
+        <div className="profile-pic">
             <img src={FabioPic} alt="Liza" />
         </div>
-        <div class="intro">
-            <span class="badge">Web Developer</span>
+        <div className="intro">
+            <span className="badge">Web Developer</span>
             <h1>Hi, I'm Fábio 👋</h1>
             <h2>your strategic partner for web apps</h2>
             <p>From a young age, I always loved programming. Now, I'm dedicated to honing my skills, aiming to <strong>create the best apps</strong> possible. My passion drives me to <strong>learn and innovate constantly</strong>, turning dreams into reality. My journey is inspiring, showcasing a relentless pursuit of excellence in the ever-evolving world of technology. I'm committed to pushing boundaries!</p>
         </div>
-        <div class="stats">
-            <div class="stat">
+        <div className="stats">
+            <div className="stat">
                 <p>Years experience</p>
                 <p>1</p>
             </div>
-            <div class="stat">
+            <div className="stat">
                 <p>Projects completed</p>
                 <p>1</p>
             </div>
@@ -76,8 +76,8 @@ const About = () => {
 
             <div className="skills-badge">
               <svg width="45" height="45" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 20.3335H16V27.0002L9 20.3335Z" fill="#0055FF"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" fill="white"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M9 20.3335H16V27.0002L9 20.3335Z" fill="#0055FF"/>
                 <path d="M16 13.6665H9V20.3332H23L16 13.6665Z" fill="#00AAFF"/>
                 <path d="M9 7L16 13.6667H23V7H9Z" fill="#88DDFF"/>
               </svg>
