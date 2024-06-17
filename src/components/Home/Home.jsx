@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Home.css';
 import '../../styles.css';
-import Fabio from '../../assets/Fabio.jpeg'
 import Footer from "../Footer/Footer";
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
     <div className="home-wrapper">
       <div className="rgb-line"></div>
       <main className="home-content">
-        <img src={Fabio} alt="" className="home-photo" />
+        <img src="/assets/Fabio.jpeg" alt="" className="home-photo" />
         <h1 className="home-title">Hi, I'm Fábio — Full Stack Developer</h1>
         <h2 className="home-description">I enjoy creating products from scratch and improve existing ones. <br></br>In simple terms, I create <span id="words">websites</span> that make a profit or enhance business.</h2>
 

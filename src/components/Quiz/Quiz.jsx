@@ -25,22 +25,36 @@ const Quiz = () => {
   const clickAnswer = () => {
     setQuestionIndex(prevIndex => prevIndex + 1);
   };
+  
+  const borderColors = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r},${g},${b})`;
+  }
 
   return (
-    <div className="quiz-container">
-      <h1>Quiz Questions</h1>
+    <div className="quiz-container full-width">
       {questions.length > 0 && questionIndex < questions.length && (
         <div>
-          <p>{questions[questionIndex].question}</p>
-          <ul>
-            {questions[questionIndex].answers.map((answer, index) => (
-              <li key={index} onClick={clickAnswer}>{answer}</li>
+          <p className="quiz-questions">{questions[questionIndex].question}</p>
+          <ul className="quiz-answers-list">
+            {questions[questionIndex].answers.map((answer, index) => (   
+              <li 
+                className="quiz-answers" 
+                key={index} 
+                onClick={clickAnswer}
+                style={{borderColor: borderColors()}}
+              > 
+                {answer}
+              </li>
             ))}
           </ul>
         </div>
       )}
       {questions.length > 0 && questionIndex >= questions.length && (
-        <p>You've completed the quiz!</p>
+        <p>You've completed the quiz with X points!</p>
       )}
     </div>
   );

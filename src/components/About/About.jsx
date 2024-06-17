@@ -1,6 +1,5 @@
 import React from "react";
 import './About.css';
-import FabioPic from '../../assets/Fabio2.jpg'
 import Footer from "../Footer/Footer";
 
 const About = () => {
@@ -9,7 +8,7 @@ const About = () => {
       
       <div className="about-container">
         <div className="profile-pic">
-            <img src={FabioPic} alt="Liza" />
+            <img src="/assets/Fabio2.jpg" alt="Liza" />
         </div>
         <div className="intro">
             <span className="badge">Web Developer</span>

@@ -2,6 +2,10 @@
 
 
 /public/*.png
+/public/assets/*.png
+/public/assets/*.svg
+/public/assets/*.jpg
+/public/assets/
 /public/*.ico
 /public/images
 
