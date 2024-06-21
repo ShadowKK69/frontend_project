@@ -129,9 +129,6 @@ nav .menu {
 
 .active {
   color: var(--secondary-text-color);
-  /* border-bottom: solid 1px var(--secondary-text-color); */
-  /* border: 1px solid; */
-  /* border: 1px solid rgba(41,41,41, 0.5); */
   background-color: var(--button-color);
   color: var(--button-text-color) !important; 
   border-radius: 10px;
