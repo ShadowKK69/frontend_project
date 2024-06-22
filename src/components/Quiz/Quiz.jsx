@@ -5,16 +5,17 @@ const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isClickable, setIsClickable] = useState(true);
 
   const [score, setScore] = useState(0);
   const [quizStarted, setQuizStarted] = useState(false);
 
   const [questionsAmount, setQuestionsAmount] = useState(10);
   const [categories, setCategories] = useState('general_knowledge');
-  const [difficulty, setDifficulty] = useState('hard');
-  
+  const [difficulty, setDifficulty] = useState('easy');
+
   useEffect(() => {
-    if(quizStarted) {
+    if (quizStarted) {
       const fetchQuestions = async () => {
         const response = await fetch(`https://the-trivia-api.com/api/questions?limit=${questionsAmount}&categories=${categories}&difficulty=${difficulty}`);
         const data = await response.json();
@@ -28,25 +29,37 @@ const Quiz = () => {
   }, [quizStarted]);
 
   const clickAnswer = (answer) => {
+    setSelectedAnswer(answer);
+    setIsClickable(false);
+
     if (answer === questions[questionIndex].correctAnswer) {
       setScore(prevScore => prevScore + 1);
     }
-    setQuestionIndex(prevIndex => prevIndex + 1);
+
+    setTimeout(() => {
+      setQuestionIndex(prevIndex => prevIndex + 1);
+      setSelectedAnswer(null);
+      setIsClickable(true);
+    }, 1500);
   };
 
   const startQuiz = (e) => {
-    if(window.confirm("Are you sure?")) {
-
+    if (window.confirm("Are you sure?")) {
       e.preventDefault();
-      console.log('started');
       setQuizStarted(true);
       setQuestionIndex(0);
       setScore(0);
     }
   }
 
+  const resetQuiz = () => {
+    setQuizStarted(false);
+    setQuestionIndex(0);
+    setScore(0);
+  }
+
   const nameCategory = (category) => {
-    return category.replace("_"," ").toUpperCase().replace("_"," ");
+    return category.replace("_", " ").toUpperCase().replace("_", " ");
   }
 
   return (
@@ -96,27 +109,52 @@ const Quiz = () => {
       )}
       {quizStarted && questions.length > 0 && questionIndex < questions.length && (
         <div className="quiz-questions-wrapper">
+          <button className="quiz-questions-reset" onClick={resetQuiz}>Go back to Options</button>
           <div className="quiz-difficulty">{nameCategory(difficulty)} MODE</div>
           <div className="quiz-category-name">{nameCategory(categories)}</div>
           <div className="quiz-question-number">Question {questionIndex + 1} / {questions.length}</div>
           <p className="quiz-questions">{questions[questionIndex].question}</p>
           <ul className="quiz-answers-list">
-            {questions[questionIndex].answers.map((answer, index) => (
-              <li 
-                className="quiz-answers" 
-                key={index} 
-                onClick={() => clickAnswer(answer)}
-              >
-                {answer}
-              </li>
-            ))}
+            {questions[questionIndex].answers.map((answer, index) => {
+
+              const isCorrect = answer === questions[questionIndex].correctAnswer;
+              const isSelected = selectedAnswer === answer;
+              let backgroundColor;
+
+              if (selectedAnswer) {
+                if (isSelected) {
+                  backgroundColor = isCorrect ? '#33ffaf' : '#ff4343'; 
+                } else if (isCorrect) {
+                  backgroundColor = '#33ffaf';
+                }
+              }
+
+              return (
+                <li
+                  key={index}
+                  style={{ backgroundColor }}
+                  className="quiz-answers"
+                  onClick={isClickable ? () => clickAnswer(answer) : null}
+                  >
+                    {answer}
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
       {quizStarted && questionIndex >= questions.length && (
-        <>
-          <div>You've scored {score} out of {questions.length}!</div>
-        </>
+        <div className="quiz-score-wrapper">
+          {score === questions.length && (
+            <>
+              <div className="quiz-score-100">Well Done</div>
+              <div>You got all the questions right</div>
+              <button>Claim here your reward</button>
+            </>
+          )}
+          <div className="quiz-score-questions">You've scored {score} out of {questions.length} questions</div>
+          <button onClick={resetQuiz} className="quiz-reset">Reset Game</button>
+        </div>
       )}
     </div>
   );
