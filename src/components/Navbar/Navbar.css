@@ -3,9 +3,9 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--background-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background-color: transparent;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(90px);
   width: 100%;
   position: fixed;
   top: 0;
@@ -87,33 +87,36 @@ nav .menu {
   cursor: pointer;
 }
 
-
+.active {
+  background-color: var(--button-color);
+  color: var(--button-text-color) !important; 
+  border-radius: 10px;
+}
 
 @media (max-width: 780px) {
   nav {
     flex-direction: column;
     align-items: start;
     padding: 1rem 1rem;
-    width: 100%;
-  }
-  nav .menu {
-    display: flex;
-    margin-right: 1rem;
   }
 
+  nav .menu {
+    display: flex;
+  }
+
+  nav .menu > i {
+    color: var(--button-color);
+    padding-right: 10px;
+  }
 
   nav .nav-links {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
     margin-bottom: 0.25rem;
-    margin-top: 1rem;
-  }
-
-  nav .nav-links .nav-socials {
-    margin: 0;
-    padding: 0;
+    margin-top: 3rem;
   }
 
   nav .nav-links li {
@@ -122,14 +125,8 @@ nav .menu {
     margin: 0.5rem;
   }
 
-  nav .nav-links li a {
-    margin: 0.2rem 3rem;
+  nav .nav-links .contact {
+    margin: 40px 0;
   }
-}
 
-.active {
-  color: var(--secondary-text-color);
-  background-color: var(--button-color);
-  color: var(--button-text-color) !important; 
-  border-radius: 10px;
 }

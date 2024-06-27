@@ -192,3 +192,14 @@
 .quiz-container .quiz-score-wrapper .quiz-reset:hover {
   box-shadow: rgba(42, 61, 165, 0.5) 0px 2px 5px;
 }
+
+@media (max-width: 780px) {
+  .quiz-container .quiz-answers-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quiz-container .quiz-questions-wrapper .quiz-questions-reset {
+    top: 70px;
+  }
+}

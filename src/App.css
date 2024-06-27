@@ -20,6 +20,12 @@ body {
   box-sizing: border-box;
 }
 
+@media (max-width: 760px) {
+  .app-wrapper {
+    min-height: unset;
+  }
+}
+
 :root {
   --background-color: rgba(255, 255, 255, 0.8);
   --optional-bg-color: #EFEFF0;

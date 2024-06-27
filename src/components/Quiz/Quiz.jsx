@@ -143,7 +143,7 @@ const Quiz = () => {
           </ul>
         </div>
       )}
-      {quizStarted && questionIndex >= questions.length && (
+      {quizStarted && questions.length > 0 && questionIndex >= questions.length && (
         <div className="quiz-score-wrapper">
           {score === questions.length && (
             <>

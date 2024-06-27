@@ -5,14 +5,13 @@ import Footer from "../Footer/Footer";
 const About = () => {
   return (
     <>
-      
       <div className="about-container">
         <div className="profile-pic">
-            <img src="/assets/Fabio2.jpg" alt="Liza" />
+            <img src="/assets/Fabio2.jpg" alt="" />
         </div>
         <div className="intro">
             <span className="badge">Web Developer</span>
-            <h1>Hi, I'm Fábio 👋</h1>
+            <h1>Hi, I'm Fábio 👋🏻</h1>
             <h2>your strategic partner for web apps</h2>
             <p>From a young age, I always loved programming. Now, I'm dedicated to honing my skills, aiming to <strong>create the best apps</strong> possible. My passion drives me to <strong>learn and innovate constantly</strong>, turning dreams into reality. My journey is inspiring, showcasing a relentless pursuit of excellence in the ever-evolving world of technology. I'm committed to pushing boundaries!</p>
         </div>

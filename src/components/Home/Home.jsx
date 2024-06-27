@@ -15,7 +15,7 @@ const Home = () => {
         <h2 className="home-description">I enjoy creating products from scratch and improve existing ones. <br></br>In simple terms, I create <span id="words">websites</span> that make a profit or enhance business.</h2>
 
         <div className="home-info">
-          <div><Link to="/contact" className="btn contact-me">Let's talk</Link></div>
+          <Link to="/contact" className="btn contact-me">Let's talk</Link>
           <div className="job-wrapper">
             <div className="circle"></div>
             <div className="open-job">Open for opportunities</div>

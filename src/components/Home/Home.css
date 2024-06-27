@@ -20,7 +20,7 @@ main {
 }
 
 .home-wrapper {
-  margin-top: 70px;
+  padding-top: 70px;
 }
 
 .home-content {
@@ -84,7 +84,7 @@ main {
 .home-content .home-info .circle::before {
   animation: blinking 2s infinite;
   position: absolute;
-  background-color: #00FF00
+  background-color: #00ffa6
 }
 
 @keyframes blinking {
@@ -115,5 +115,45 @@ main {
   margin-top: 15px;
   line-height: 30px;
   max-width: 640px;
+}
+
+@media (max-width: 780px) {
+
+  .home-content {
+    margin-bottom: 90px;
+  }
+
+  .home-content .home-title {
+    font-size: 2.4rem;
+  }
+  
+  .home-content .home-description {
+    max-width: 420px;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .home-content .home-info {
+    flex-direction: column;
+  }
+
+  .home-content .home-info .contact-me {
+    margin: 0;
+    width: 90%;
+    text-align: center;
+  }
+
+  .home-content .home-info .job-wrapper {
+    margin-top: 30px;
+    font-size: 1.25rem;
+  }
+
+  .main-portfolio .portfolio-title {
+    font-size: 2rem;
+  }
+
+  .main-portfolio .portfolio-description {
+    font-size: 1.25rem;
+  }
 }
 
