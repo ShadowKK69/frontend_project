@@ -36,3 +36,14 @@ footer .footer-socials a {
 footer .footer-socials a:hover {
   color: #ccc;
 }
+
+@media (max-width: 480px) {
+  footer .footer-heading {
+    font-size: 1.75rem;
+    padding: 0 10px;
+  }
+
+  footer .footer-email {
+    font-size: 1.25rem;
+  }
+}

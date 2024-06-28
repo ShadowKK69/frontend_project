@@ -24,6 +24,10 @@ const About = () => {
                 <p>Projects completed</p>
                 <p>1</p>
             </div>
+            <div className="stat">
+                <p>Industries served</p>
+                <p>0</p>
+            </div>
         </div>
       </div>
 
@@ -50,7 +54,7 @@ const About = () => {
       <section className="toolset-info">
         <div className="skills-wrapper">
           <h3 className="skills-heading">My skill/toolset</h3>
-          <div className="skills-secondary-heading">UI/UX and graphic tools</div>
+          <div className="skills-secondary-heading">UI/UX and graphic tools:</div>
           <div className="skills">
             <div className="skills-badge">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 48 48">
@@ -83,7 +87,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="skills-secondary-heading">Web development</div>
+          <div className="skills-secondary-heading">Web development:</div>
           <div className="skills">
             <div className="skills-badge">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0 0 48 48">

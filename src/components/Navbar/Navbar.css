@@ -5,7 +5,7 @@ nav {
   align-items: center;
   background-color: transparent;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(90px);
+  backdrop-filter: blur(30px);
   width: 100%;
   position: fixed;
   top: 0;
@@ -97,7 +97,11 @@ nav .menu {
   nav {
     flex-direction: column;
     align-items: start;
-    padding: 1rem 1rem;
+    padding: 1rem 0;
+  }
+
+  nav .title {
+    margin-left: 20px;
   }
 
   nav .menu {
@@ -106,7 +110,6 @@ nav .menu {
 
   nav .menu > i {
     color: var(--button-color);
-    padding-right: 10px;
   }
 
   nav .nav-links {

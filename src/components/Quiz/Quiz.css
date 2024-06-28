@@ -26,12 +26,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 90px 90px;
-  border: 1px solid var(--footer-bg);
-  border-radius: 5px;
+  padding: 90px;
   background: var(--quiz-option-color);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 8px 0 rgba( 31, 38, 135, 0.37 );
+  border-radius: 10px;
 }
 
 
@@ -201,5 +199,16 @@
 
   .quiz-container .quiz-questions-wrapper .quiz-questions-reset {
     top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .quiz-container .quiz-options-container .quiz-options-title {
+    font-size: 2rem;
+  }
+
+  .quiz-container .quiz-options {
+    padding: 45px;
   }
 }

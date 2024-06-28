@@ -8,7 +8,7 @@
 .about-container .profile-pic img {
   width: 300px;
   height: 470px;
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .about-container .intro {
@@ -19,7 +19,6 @@
 
 .about-container .intro .badge {
   background-color: #eee;
-  color: var(--primary-text-color);
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -45,7 +44,7 @@
 
 .about-container .stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   grid-column: span 2;
   margin-top: 20px;
@@ -53,14 +52,20 @@
 
 .about-container .stat {
   text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  padding: 20px 20px 20px 0;
+  border-bottom: 1px solid var(--primary-text-color);
+  text-align: left;
 }
 
-.about-container .stat p {
+.about-container .stat {
+  font-size: 1.5rem;
+}
+
+.about-container .stat p:last-child {
   margin: 5px 0;
   color: var(--primary-text-color);
+  font-weight: 600;
+  font-size: 1.75rem;
 }
 
 .about-container .stat p:first-child {
@@ -133,13 +138,16 @@
 
 .skills-wrapper .skills {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 35px;
 }
 
 .skills-wrapper .skills .skills-badge {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   background-color: var(--optional-bg-color);
   padding: 2px 15px;
   border-radius: 15px;
@@ -176,6 +184,7 @@
 
   .about-container .intro .badge {
     background-color: transparent;
+    color: var(--primary-text-color);
     padding: 10px 8px;
     border: 1px solid #E6E6E6;
     border-radius: 12px;
@@ -190,6 +199,7 @@
 
   .about-container .intro h2 {
     font-weight: normal;
+    text-align: center;
   }
 
   .about-container .stats {
@@ -204,5 +214,15 @@
   .skill-info .skill-info-wrapper .work-info {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container .intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-container .stat p {
+    font-size: 1rem;
   }
 }
