@@ -6,14 +6,14 @@ const Quiz = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isClickable, setIsClickable] = useState(true);
-
   const [score, setScore] = useState(0);
   const [quizStarted, setQuizStarted] = useState(false);
-
   const [questionsAmount, setQuestionsAmount] = useState(10);
   const [categories, setCategories] = useState('general_knowledge');
   const [difficulty, setDifficulty] = useState('easy');
-
+  const [shownQuestions, setShownQuestions] = useState([]);
+  const [results, setResults] = useState(false);
+  
   useEffect(() => {
     if (quizStarted) {
       const fetchQuestions = async () => {
@@ -27,7 +27,26 @@ const Quiz = () => {
       fetchQuestions();
     }
   }, [quizStarted]);
-
+  
+  const startQuiz = (e) => {
+    if (window.confirm("Are you sure?")) {
+      e.preventDefault();
+      setQuizStarted(true);
+      setQuestionIndex(0);
+      setScore(0);
+      setShownQuestions([]);
+      setResults(false);
+    }
+  };
+  
+  const resetQuiz = () => {
+    setQuizStarted(false);
+    setQuestionIndex(0);
+    setScore(0);
+    setShownQuestions([]);
+    setResults(false);
+  };
+  
   const clickAnswer = (answer) => {
     setSelectedAnswer(answer);
     setIsClickable(false);
@@ -36,34 +55,32 @@ const Quiz = () => {
       setScore(prevScore => prevScore + 1);
     }
 
+    setShownQuestions(prevShownQuestions => [
+      ...prevShownQuestions,
+      {
+        ...questions[questionIndex],
+        selectedAnswer: answer,
+      }
+    ])
+
     setTimeout(() => {
       setQuestionIndex(prevIndex => prevIndex + 1);
       setSelectedAnswer(null);
       setIsClickable(true);
-    }, 1500);
+    }, 700);
+
   };
 
-  const startQuiz = (e) => {
-    if (window.confirm("Are you sure?")) {
-      e.preventDefault();
-      setQuizStarted(true);
-      setQuestionIndex(0);
-      setScore(0);
-    }
-  }
-
-  const resetQuiz = () => {
-    setQuizStarted(false);
-    setQuestionIndex(0);
-    setScore(0);
+  const displayResults = () => {
+    setResults(prevResults => !prevResults);
   }
 
   const nameCategory = (category) => {
     return category.replace("_", " ").toUpperCase().replace("_", " ");
-  }
+  };
 
   return (
-    <div className="quiz-container full-width">
+    <div className="quiz-container">
       {!quizStarted && (
         <div className="quiz-options-container">
           <div className="quiz-options-title">Quiz Options Menu</div>
@@ -116,7 +133,6 @@ const Quiz = () => {
           <p className="quiz-questions">{questions[questionIndex].question}</p>
           <ul className="quiz-answers-list">
             {questions[questionIndex].answers.map((answer, index) => {
-
               const isCorrect = answer === questions[questionIndex].correctAnswer;
               const isSelected = selectedAnswer === answer;
               let backgroundColor;
@@ -130,14 +146,17 @@ const Quiz = () => {
               }
 
               return (
-                <li
-                  key={index}
-                  style={{ backgroundColor }}
-                  className="quiz-answers"
-                  onClick={isClickable ? () => clickAnswer(answer) : null}
+                <>
+                  <li
+                    key={index}
+                    style={{ backgroundColor }}
+                    className="quiz-answers"
+                    onClick={isClickable ? () => clickAnswer(answer) : null}
                   >
                     {answer}
-                </li>
+                  </li>
+                </>
+
               );
             })}
           </ul>
@@ -146,13 +165,40 @@ const Quiz = () => {
       {quizStarted && questions.length > 0 && questionIndex >= questions.length && (
         <div className="quiz-score-wrapper">
           {score === questions.length && (
-            <>
+            <div>
               <div className="quiz-score-100">Well Done</div>
               <div>You got all the questions right</div>
-              <button>Claim here your reward</button>
-            </>
+            </div>
           )}
           <div className="quiz-score-questions">You've scored {score} out of {questions.length} questions</div>
+          <button onClick={displayResults}>{results ? 'Hide results' : 'Show results'}</button>
+          {results && shownQuestions.map((question, index) => {
+
+            let color;
+            let borderColor;
+
+            if (question.selectedAnswer == question.correctAnswer) {
+              color = '#33aaaf';
+              borderColor = '#33aaaf';
+            } else {
+              color = '#ff4343';
+              borderColor = '#ff4343';
+            }      
+
+            return (
+                <div key={index} style={{borderColor}} className="review-question">
+                  <dl className="question-list">
+                    <dt className="question">Question:</dt>
+                    <dd className="answer">{question.question}</dd>
+                    <dt className="question">Your Answer:</dt>
+                    <dd className="answer" style={{color}}>{question.selectedAnswer}</dd>
+                    <dt className="question">Correct Answer:</dt>
+                    <dd className="answer">{question.correctAnswer}</dd>
+                  </dl>
+                </div>
+            );
+          })}
+
           <button onClick={resetQuiz} className="quiz-reset">Reset Game</button>
         </div>
       )}

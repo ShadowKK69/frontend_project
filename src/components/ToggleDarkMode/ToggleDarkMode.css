@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #bebebe;
   transition: .4s;
 }
 
@@ -63,5 +63,16 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media (max-width: 780px) {
+
+  .darkmode-wrapper .icon-moon {
+    color: var(--mobile-icon-color);
+  }
+  
+  .slider {
+    background-color: #9b9a9a;
+  }
 }
 

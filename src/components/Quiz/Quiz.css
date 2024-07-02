@@ -73,6 +73,7 @@
 .quiz-container .quiz-questions-wrapper {
   text-align: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 .quiz-container .quiz-questions-wrapper .quiz-questions-reset {
@@ -190,6 +191,40 @@
 .quiz-container .quiz-score-wrapper .quiz-reset:hover {
   box-shadow: rgba(42, 61, 165, 0.5) 0px 2px 5px;
 }
+
+.quiz-container .review-question {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--quiz-option-color);
+  width: 98%;
+}
+
+.quiz-container .question-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-container .question-list dt {
+  /* text-align: center; */
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--primary-text-color);
+}
+
+.quiz-container .question-list dd {
+  /* text-align: center; */
+  /* margin: 5px 0 10px 20px; */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: var(--primary-text-color);
+}
+
 
 @media (max-width: 780px) {
   .quiz-container .quiz-answers-list {
