@@ -26,6 +26,8 @@ body {
   --footer-bg: #000;
   --mobile-icon-color: #838383;
 
+  --portfolio-color: rgba(223, 220, 220, 0.6);
+
   --primary-text-color: #222;
   --secondary-text-color: #959CAD;
 
@@ -47,6 +49,8 @@ body {
   --optional-bg-color: #2e2e2e;
   --footer-bg: #111111;
   --mobile-icon-color: #d6d6d6;
+
+  --portfolio-color: rgba(48, 48, 48, 0.6);
 
   --primary-text-color: rgb(255, 255, 255);
   --secondary-text-color: #bbc0cc;

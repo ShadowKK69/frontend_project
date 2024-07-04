@@ -261,4 +261,8 @@
   .quiz-container .quiz-questions {
     font-size: 2rem;
   }
+
+  .quiz-container .quiz-score-wrapper .quiz-score-questions {
+    font-size: 1rem;
+  }
 }
