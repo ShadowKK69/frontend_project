@@ -90,7 +90,7 @@ nav .menu {
 .active {
   background-color: var(--button-color);
   color: var(--button-text-color) !important; 
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 @media (max-width: 780px) {
